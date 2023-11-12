@@ -1,0 +1,1011 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Poppins:wght@100;200;300;700&family=Roboto:ital,wght@0,400;1,900&family=Source+Sans+Pro:wght@300;700&display=swap');
+/*
+fuentes a utilizar
+font-family: 'Caveat', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Source Sans Pro', sans-serif;
+*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* ---- ESTILOS GENERALES ---- */
+/* contenedor con propiedad flex */
+
+.site{
+    background-color: #F0F2EF;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-flexible{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* estilos para el nombre de la empresa */
+.container__brand-category{
+    color: green;
+    font-family: 'Caveat', cursive;
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.container__brand-name{
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+
+/* estilos para crear un elemento circular*/
+.circular-background{
+    border-radius: 50%;
+    position: relative;
+}
+
+.circular-background__content{
+   position: absolute;
+   top:50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.circular-background--units{
+    height: 25px;
+    width: 25px;
+    color: white;
+    background-color: rgb(84, 146, 84);
+}
+
+.circular-background--icons-bars{
+    height: 30px;
+    width: 30px;
+    background-color: rgb(177, 169, 167);
+    cursor: pointer;
+    color: white;
+}
+
+/* estilos para las imagenes  */
+.image__render{
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+}
+
+/* estilos para los enlaces */
+.link{
+    text-decoration: none;
+    color: rgb(100, 97, 97);
+    text-transform: uppercase;
+    padding: 1rem;
+    display: block;
+}
+
+/* estilos para el encabezado o header*/
+.site__header:first-child{
+    padding: 1.5rem;
+}
+
+/* estilos para el menu desplegable y desktop */
+.nav{
+    display: none;
+}
+
+.show-menu{
+    display: block;
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    background-color: white;
+}
+
+.nav__ul{
+    list-style: none;
+}
+
+.nav__li{
+    font-size: 1rem;
+    font-weight:600;
+}
+
+.nav__li:hover{
+   background-color: rgb(84, 146, 84);
+   transition: 1s;
+   border-radius: 10px;
+}
+
+.nav__li:hover .link{
+    color: white;
+ }
+
+/* estilos para el contenedor del carrito */
+.button-cart{
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 0 1rem;
+    caret-color: transparent;
+}
+
+.button-cart__section{
+    margin: 0 .1rem;
+    cursor: pointer;
+}
+
+.container-cart{
+    display: none;
+    background-color: rgba(58, 58, 58,0.4);
+    height: 100vh;
+    width: 100%;
+    position:absolute;
+    top: 0;
+    overflow-x: scroll;
+    z-index: 2;
+}
+
+.cart__message{
+    text-align: center;
+    font-size: 2rem;
+}
+
+.cart{
+    padding: 1rem;
+    background-color: white;
+}
+
+.cart__header{
+    border-bottom: 1px solid rgb(32, 38, 46);
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.cart__header-title{
+    caret-color: transparent;
+}
+
+.cart__icon-close{
+    cursor: pointer;
+    caret-color: transparent;
+}
+
+.cart__inline-flex{
+    display:inline-flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.cart__content{
+    padding-top: 1rem;
+}
+
+.cart__product-image{
+    height: 65px;
+    width: 65px;
+    border-radius: 10%;
+    overflow: hidden;
+}
+
+.cart__product-details{
+    width: 50%;
+}
+
+/* Estilos para las tarjetas en donde se muestran los productos del carrito*/
+.card__price-product{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+}
+
+.card__price-product::before{
+    content: "$";
+}
+
+.card__button-remove{
+    border: none;
+    color: white;
+    background-color: rgb(230, 99, 99);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 1s all ease-out;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.card__button-remove:hover{
+    scale: 1.2;
+    transition: 1s all ease-out;
+}
+
+.cart__product-units{
+   border: 2px solid #cccc; 
+   padding: 1rem 15px;
+   height: 50px;
+   border-radius: 30px;
+}
+
+.cart__input-text{
+    border: none;
+    outline: none;
+    width: 15px;
+}
+
+.cart__icon-product{
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.cart__footer{
+    padding: 1rem;
+}
+
+.cart__footer-subtotal-text,.cart__footer-subtotal-number{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.cart__footer-subtotal-number::before{
+    content: "$";
+}
+
+.cart__footer-button{
+    font-size: 1.5rem;
+    padding: 1rem;
+    border: none;
+    background-color: rgb(93, 177, 104);
+    border-radius: 1rem;
+    width: 100%;
+    color: white;
+    cursor: pointer;
+}
+
+/* estilos para el contenedor de imagenes del carrusel del header */
+.carousel{
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+}
+
+.carousel__container:nth-child(2){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    width: 100%;
+}
+
+.carousel__slide-title{
+    color:rgb(24, 22, 22);
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.carousel__slide-description{
+    color: rgba(78, 75, 75, 0.952);
+    padding: 1.2rem;
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+}
+
+.carousel__slide-button{
+    padding: 1rem 2.5rem;
+    background-color: rgb(250, 160, 86);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 20px;
+    transition: all 1s ease;
+}
+
+.carousel__slide-button:hover{
+    background-color: rgb(228, 122, 36);
+    transition: all 1s ease;
+    scale: 1.1;
+}
+
+.carousel__imagen{
+    height:225px;
+    animation: float 2s ease 0s infinite;
+}
+
+/* Animacion para la imagen flotante del header */
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0rem);
+    }
+    50% {
+        transform: translateY(3rem);
+    }
+}
+
+/* Estilos para tarjetas de marcas */
+.section__brands{
+    padding: 1rem;
+}
+
+.brands{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 3px 0;
+}
+
+.brands__icon{
+    padding: 2.2rem;
+    background-color: rgb(191, 204, 181);
+    border-radius:51% 49% 40% 60% / 72% 67% 33% 28%  ;
+}
+
+.icons-brands{
+    color: white;
+    font-size: 2rem;
+}
+
+.brands__title{
+    padding: .5rem 0px;
+    font-size: 3rem;
+    font-weight: 600;
+    font-family: 'Caveat', cursive;
+}
+
+.brands__description{
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    padding: 0px 1rem;
+    text-align: center;
+}
+
+/* Estilos para las tarjetas de las categorias  */
+.section__category{
+    padding: 1rem;
+}
+
+.section__name{
+    font-size: 2.5rem;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.section__content{
+    display: grid;
+    grid-template-columns:repeat(auto-fill,minmax(130px,1fr));
+    gap:10px 3px;
+}
+
+/*Estilos para baners */
+.section__banner{
+    margin: 15px 0px;
+    height: 400px;
+    padding: 0px 2rem;
+    background-color: #F0F2EF;
+    overflow: hidden;
+}
+
+.section__title-banner{
+    font-weight: 600;
+    font-size: 3rem;
+    font-family: 'Caveat', cursive;
+    text-align: center;
+}
+
+.section__content-banner{
+    padding-top: 1rem;
+    font-size: 1.3rem;
+    text-align:center;
+}
+
+/* Estilos para las tarjetas en donde se muestran las camisas,accesorios y electrodomesticos de la API */
+.card{
+    border: 1px solid #cccc; 
+    font-size: 1.3rem;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.container-flexcard{
+    display: flex;
+    flex-direction: column;
+}
+
+.card__image{
+    max-height: 280px;
+    min-height: 280px;
+    overflow: hidden;
+}
+
+.card__content{
+    flex-grow: 1;
+    text-align: center;
+}
+
+.card__title{
+   font-family: 'Caveat', cursive;
+   font-family: 'Poppins', sans-serif;
+   font-size: 1rem;
+   flex-grow: 1;
+}
+
+.card__price{
+    font-weight: 900;
+    color:  rgb(250, 160, 86);
+    border: none;
+    font-size: 1.5rem;
+}
+
+.card__button{
+    background-color: rgb(122, 121, 121);
+    color: white;
+    padding: 15px 0;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: .5s all ease;
+    margin-top: auto;
+}
+
+.card__price::before {
+    content: "$";
+}
+
+.card__button:hover{
+  background-color: rgb(61, 59, 59);
+  scale: 1.2;
+  transition: .5s all ease;
+}
+
+/* Modal mostrara la informacion de cada tarjeta mediante su ID o código */
+.modal{
+    height: 100vh;
+    width: 100%;
+    display: none;
+    background-color:white;
+    color:rgb(31, 30, 30);
+    position: fixed;
+    top: 0;
+    overflow-x: scroll;
+    z-index: 4;
+}
+
+.modal__close{
+    text-align: right;
+    padding-top: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.close__icon{
+ font-size: 3rem;
+ cursor: pointer;
+}
+
+.modal__container-modal{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  gap: 8px;
+  height: 100%;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.container-modal__imagen{
+    width: 260px;
+    height: 260px;
+    max-height: 260px;
+    padding-top: 15px;
+}
+
+.container-modal__text{
+    font-family: 'Poppins', sans-serif;
+    padding: 0px 1rem;
+}
+
+.container-modal__price{
+    font-size: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 2rem;
+    border-bottom: 2px solid rgb(116, 113, 113);
+}
+
+.container-modal__price::before{
+   content: "$";
+}
+
+.container-modal__name-producto{
+    font-size: 1.6rem;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.container-modal__category{
+    font-size: 3rem;
+    margin-top: 1rem;
+}
+
+/* Estilos para el contenedor del contenido del modal que deatalla las tecnologías del proyecto */
+.modal__contenedor-detallesoftware{
+    padding: 0 2rem;
+    padding-bottom: 2rem;
+}
+
+.modal__detallesofware-titulo{
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.modal__detallesofware-introduccion{
+    padding-bottom: 1rem;
+    text-align:justify;
+}
+
+.modal__detallesofware-li{
+    text-align:justify;
+}
+
+.modal__detallesofware-componentes{
+    font-weight: 600;
+}
+
+/* Estilos para el footer */
+.footer{
+    background-color: rgba(61, 59, 59,0.5);
+    padding: 8rem;
+    text-align: center;
+}
+
+.container__brand-name--footer,.section__footer{
+    color: white;
+}
+
+/**********************************************/
+/* .cajapadere{
+    border: 1px solid black;
+    min-height: 350px;
+    width: 100%;
+    overflow: hidden;
+
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.cajahijo{
+    font-size: 4rem;
+    text-align: center;
+    border: 1px solid red;
+    min-width: 360px;
+    padding-top: 5rem;
+
+    animation: animationscroll 8s linear infinite;
+
+}
+
+@keyframes animationscroll{
+    0%{
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-100% * 5));
+    }
+}  */
+
+/* Estilos del carrusel */
+.carrusel {
+    min-height: 200px;
+    max-height: 200px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.carrusel__descripcion{
+    color: white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+}
+
+.carrusel__informacion{
+    padding: .5rem 1rem;
+    text-align: center;
+    background-color: rgba(43, 39, 48,0.4);
+    user-select: none;
+}
+
+.carrusel__servicio{
+    font-size: clamp(1rem, 1.2rem, 2.5rem);
+}
+
+.carrusel__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* celular gama media */
+@media screen and (min-width:320px){
+
+    /* Estilo para el nombre de la empresa */
+    .container__brand-name{
+        font-size: 1.9rem;
+    }
+    
+    /* estilos para el contenedor de carrusel */
+    .carousel__slide-title{
+        font-size: 1.5rem;
+        padding: 0 2rem;
+    }
+
+    .carousel__slide-description{
+        font-size: 1.9rem;
+    }
+
+    /* Estilos para la tarjetas de marcas */
+    .brands{
+        margin: 25px 0;
+    }
+
+    .brands__icon{
+        padding: 3.5rem;
+    }
+
+    /* Estilos para las tarjetas en donde se muestran las camisas,accesorios y electrodomesticos de la API */
+    .card{
+        font-size: 5rem;
+    }
+}
+
+/* celular gama estandar */
+@media screen and (min-width:480px){
+
+    /* Estilo para cambiar el tamaño de la imagen del carrusel */
+    .carousel__imagen{
+        height:250px;
+    }
+
+    /* Estilos para las tarjetas en donde se muestran las camisas,accesorios y electrodomesticos de la API */
+    .card{
+        font-size: 5rem;
+    }
+
+    /* Estilos para las tarjetas de las categorias  */
+    .section__content{
+        display: grid;
+        grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+        gap:10px 3px;
+    }
+
+   /* Estilos para la tarjetas de marcas */
+    .brands__icon{
+        padding: 4rem;
+    }
+
+    .icons-brands{
+        font-size: 3rem;
+    }
+
+    .brands__description{
+        padding: 0 3rem;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width:768px){
+
+
+    /* Estilo para el nombre de la empresa */
+    .container__brand-name{
+        font-size: 2.3rem;
+    }
+    
+    .container__brand-category{
+        font-weight: 900;
+        font-size: 2.5rem;
+    }
+
+    /* Estilo para el icono de amburguesa que muestra el menu */
+    .circular-background__icon{
+        font-size: 1.3rem;
+    } 
+
+    .circular-background--units{
+        height: 35px;
+        width: 35px;
+    }
+    
+    .circular-background--icons-bars{
+        height: 40px;
+        width: 40px;
+    }
+
+    /* estilos para el contenedor del carrito */
+    .button-cart{
+        padding: 0 2rem;
+    }
+
+    .button-cart__section{
+        margin: 0 .2rem;
+    }
+
+    /* estilos para el contenedor de imagenes del carrusel del header */
+    .carousel__imagen{
+        height:300px;
+    }
+
+    .carousel{
+        min-height: 400px;
+    }
+
+   .carousel__slide-title{
+        font-size: 2rem;
+    }
+
+    .carousel__slide-description{
+        font-size: 2.5rem;
+    }
+
+    .carousel__slide-button{
+        padding: 1.5rem 2.5rem;
+        font-size: 25px;
+    }
+
+    /* Estilos para la tarjetas de marcas */
+    .brands__title{
+        font-size: 3.6rem;
+    }
+
+    /*Estilos para banners */
+    .section__title-banner{
+        padding-bottom: 1rem;
+    }
+    
+    .section__content-banner{
+        font-size: 1.8rem;
+    }
+
+    /* Estilos para las tarjetas en donde se muestran las camisas,accesorios y electrodomesticos de la API */
+    .card__title{
+        font-size: 1.1rem;
+    }
+
+    /* Estilos para las tarjetas en donde se muestran los productos del carrito*/
+    .container-cart{
+        padding: 3rem 7rem;
+    }
+
+    .cart{
+        padding: 1rem;
+    }
+
+    .cart__product-image{
+        height: 130px;
+        width: 130px;
+    }
+
+    .cart__header{
+        font-size: 2rem;
+    }
+
+    .cart__product-details{
+        font-size: 1.3rem;
+    }
+
+    .card__price-product{
+        font-size: 1.6rem;
+    }
+
+    .card__button-remove{
+        font-size: 1rem;
+        padding: 8px;
+    }
+
+    .cart__product-units,.cart__input-text{
+        font-size: 1.1rem;
+    }
+
+    .cart__footer-subtotal-text,.cart__footer-subtotal-number,.cart__footer-button{
+        font-size: 1.5rem;
+    }
+
+    .cart__message{
+        font-size: 2.5rem;
+    }
+
+    /* Modal mostrara la informacion de cada tarjeta mediante su ID o código */
+    .modal{
+        background-color: rgba(58, 58, 58,0.4);
+        padding: 1rem 8rem 2rem 8rem;
+    }
+
+    .modal__content{
+        background-color: white;
+    }
+
+    .container-modal__price{
+        font-size: 2.5rem;
+        font-weight: 600;
+        border-bottom: 2px solid rgb(82, 80, 80);
+    }
+        
+    .container-modal__text{
+        font-size: 1.1rem;
+        padding-bottom: 30px;
+    }
+
+    /* Estilos del carrusel */
+    .carrusel {
+        min-height: 250px;
+        max-height: 250px;
+    }
+
+    .carrusel__informacion{
+        padding: 1rem 2rem;
+    }
+
+    .carrusel__servicio{
+        font-size: clamp(1rem, 1.6rem, 2rem);
+    }
+
+    .carrusel__contenedorimagen{
+        width: 100%;
+    }
+
+    /* Estilos para el contenedor del contenido del modal que deatalla las tecnologías del proyecto */
+    .modal__detallesofware-introduccion,.modal__detallesofware-tecnologias{
+        font-size: 1.2rem;
+    }
+
+    /* Estilos para el footer */
+    .footer__company{
+        font-size: 1.5rem;
+    }
+}
+
+/* Laptop */
+@media screen and (min-width:960px){
+ 
+    /* estilos para el menu desplegable y desktop */
+    .circular-background--icons-bars{
+        display: none;
+    }
+
+    .site__header{
+        flex-grow: 1;
+        padding: 0;
+    }
+
+    .site__content:first-child{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav{
+        display: inline-flex;
+        justify-items: center;
+    }
+
+    .nav__ul{
+        display: flex;
+        align-items: center;
+    }
+
+    .button-cart{
+        padding: 0 0;
+    }
+
+    /* Estilos para las tarjetas de las categorias  */
+    .section__category{
+        padding: 2rem;
+    }
+
+    .section__name{
+        font-size: 3rem;
+        font-weight: 600;
+        color: #000000;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Estilos para las tarjetas de las marcas de los productos  */
+    .section__brands{
+        display: flex;
+        padding: 3rem 2rem;
+    }
+
+    .brands{
+        flex-grow: 1;
+        flex-basis: 150px;
+        justify-content: space-between;
+        margin: 3px;
+    }
+
+    .brands__description{
+        padding: 0 0;
+        flex-grow: 1;
+    }
+
+    /* estilos para el contenedor de imagenes del carrusel del header */
+    .carousel{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+ 
+    .carousel__container:nth-child(1){
+        background-color: rgb(216, 211, 219);
+        width: 25%;
+        height: 30%;
+        margin-right: 30px;
+        border-radius: 65% 35% 40% 60% / 41% 49% 51% 59%  ;
+    }
+
+    .carousel__container:nth-child(2){
+        width: 65%;
+        left:auto;
+        right: 1px;
+    }
+
+    /* Estilos para las tarjetas en donde se muestran los productos del carrito*/
+    .cart{
+        padding: 2rem 2rem;
+    }
+    
+    /* Estilos del carrusel */
+    .carrusel {
+        min-height: 370px;
+        max-height: 370px;
+    }
+
+    .carrusel__servicio{
+        padding: 1.7rem 0;
+    }
+
+    /* Modal mostrara la informacion de cada tarjeta mediante su ID o código */
+    .modal{
+        padding: 1rem 12rem;
+    }
+}
+
+@media screen and (min-width:1024px){
+  
+    /* Estilos para las tarjetas en donde se muestran los productos del carrito*/
+    .container-cart{
+        padding: 3rem 14rem;
+    }
+
+    /* Modal mostrara la informacion de cada tarjeta mediante su ID o código */
+    .modal{
+        padding: 1rem 20rem;
+    }
+}
+
+@media screen and (min-width:1200px){
+    .container-cart{
+        padding: 3rem 17rem;
+    }
+}
+
+@media screen and (min-width:1328px){
+
+     /* Estilos para las tarjetas en donde se muestran los productos del carrito*/
+
+}
